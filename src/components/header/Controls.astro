@@ -1,5 +1,78 @@
+---
+import search from "../../images/svg/search.svg";
+import cog from "../../images/svg/cog.svg";
+import moon from "../../images/svg/moon.svg";
+---
 <div class="controls">
-    <div class="controls__search">LUPA</div>
-    <div class="controls__settings">COG</div>
-    <div class="controls__mode">DARK/LIGHT</div>
+    <div class="controls__search">
+        <img src={search} alt="">
+    </div>
+    <div class="controls__settings">
+        <img src={cog} alt="">
+    </div>
+    <div class="mode">
+        <div class="mode__switch">
+            <img src={moon} alt="">
+        </div>
+        <div class="mode__light">Light Mode</div>
+        <div class="mode__dark">Dark Mode</div>
+    </div>
 </div>
+
+<style lang="scss">
+    .controls {
+        flex:0 0 17%;
+        display: flex;
+        align-items: center;
+        padding:var(--space-xs);
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .controls__search {
+        flex: 0 0 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .controls__settings {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 25%;
+    }
+
+    .mode {
+        position: relative;
+        flex:0 0 50%;
+        color:var(--color-text-light);
+        font-size:12px;
+        background-color: var(--color-text-grey);
+        display: flex;
+        padding:var(--space-xs); 
+        border-radius: 40px;
+        gap:var(--space-xs);
+    }
+
+    .mode__switch {
+        background-color: var(--color-text-light);
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left:4px;
+        top: 4px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 24px;
+        }
+    }
+
+</style>

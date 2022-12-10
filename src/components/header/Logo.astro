@@ -1,10 +1,22 @@
 <a class="logo" href="/">
-    <div class="logo__image"></div>
-    <div class="logo__text">LiveScores</div>
+    <svg height="34" width="34">
+        <circle cx="17" cy="17" r="17" fill="red" />
+      </svg>
+    <span>LiveScores</span>
 </a>
 
 <style lang="scss">
     .logo {
-        background-color:red;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        flex:0 0 18%;
+    }
+
+    .logo span {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color:var(--color-text-light)
     }
 </style>

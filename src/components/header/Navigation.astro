@@ -1,34 +1,74 @@
+---
+import football from '../../images/svg/football.svg';
+---
 <nav class="navigation">
     <ul>
         <li>
-            <a href="" class="navigation__item">
-                <img src="#" alt="alt">
+            <a href="/" class="navigation__item">
+                <img src={football} alt="alt">
                 <span>Football</span>
             </a>
         </li>
         <li>
-            <a href="" class="navigation__item">
-                <img src="#" alt="alt">
+            <a href="/" class="navigation__item">
+                <img src={football} alt="alt">
                 <span>Basketball</span>
             </a>
         </li>
         <li>
-            <a href="" class="navigation__item">
-                <img src="#" alt="alt">
+            <a href="/" class="navigation__item">
+                <img src={football} alt="alt">
                 <span>Badminton</span>
             </a>
         </li>
         <li>
-            <a href="" class="navigation__item">
-                <img src="#" alt="alt">
+            <a href="/" class="navigation__item">
+                <img src={football} alt="alt">
                 <span>Baseball</span>
             </a>
         </li>
         <li>
-            <a href="" class="navigation__item">
-                <img src="#" alt="alt">
+            <a href="/" class="navigation__item">
+                <img src={football} alt="alt">
                 <span>Voleyball</span>
             </a>
         </li>
     </ul>
 </nav>
+
+<style lang="scss">
+    nav {
+        display: flex;
+        flex:1;
+        align-self: stretch;
+    }
+    ul {
+        display: flex;
+        gap:calc(var(--space-default) * 2);
+        list-style-type: none;
+        padding:0;
+        margin:0;
+
+        li {
+            display: flex;
+            align-self: stretch;
+
+            &.active {
+                border-bottom: 3px solid var(--color-secondary);
+            }
+        }
+    }
+
+    .navigation__item {
+        display: flex;
+        align-items: center;
+        gap:var(--space-sm);
+        color: var(--color-text-grey);
+        text-decoration: none;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+</style>

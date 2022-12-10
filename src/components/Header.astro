@@ -5,7 +5,23 @@ import Controls from "./header/Controls.astro";
 ---
 
 <header>
-    <Logo />
-    <Navigation />
-    <Controls />
+    <div class="container">
+        <div class="wrap">
+            <Logo />
+            <Navigation />
+            <Controls />
+        </div>
+    </div>
 </header>
+
+<style>
+    header {
+        background-color: var(--color-bg-light);
+    }
+
+    .wrap {
+        display: flex;
+        align-items: center;
+        height: 8rem;
+    }
+</style>
