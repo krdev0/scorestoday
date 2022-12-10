@@ -1,11 +1,18 @@
+---
+import Button from "../Button.astro";
+---
+
 <div class="main">
     <div class="filters">
         <div class="filters__type">
-
+            <Button name="All" />
+            <Button name="Live" class="active" />
+            <Button name="Odds" />
+            <Button name="Finished" />
         </div>
 
         <div class="filters__date">
-            
+            <Button name="Mon, 22 Aug 2022" />
         </div>
     </div>
 </div>
@@ -16,5 +23,16 @@
 		border-radius: var(--border-radius);
 		background-color: var(--color-bg-light);
         flex:1;
+    }
+
+    .filters {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .filters__type {
+        display: flex;
+        gap:var(--space-default);
     }
 </style>

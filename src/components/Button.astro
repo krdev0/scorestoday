@@ -1,0 +1,22 @@
+---
+const {name, class} = Astro.props;
+---
+<button class="active">
+    {name}
+</button>
+
+<style lang="scss">
+    button {
+        background-color: var(--color-bg-lightgrey);
+        border:none;
+        border-radius: 3rem;
+        padding:var(--space-xs) var(--space-default);
+        color:var(--color-text-grey);
+        font-size: 1.4rem;
+
+        &.active {
+            background-color: var(--color-secondary);
+            color:var(--color-text-light);
+        }
+    }
+</style>
