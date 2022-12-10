@@ -1,11 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AppLayout from '../layouts/AppLayout.astro';
 import Header from '../components/Header.astro';
+import Sidebar from '../components/app/Sidebar.astro';
+import Main from '../components/app/Main.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<Header />
+		<AppLayout>
+			<Sidebar/>
+			<Main />
+		</AppLayout>
 	</main>
 </Layout>
 
