@@ -32,13 +32,14 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
+<style lang="scss" is:global>
 	:root {
 		--space-xs: 1rem;
 		--space-sm: 1.5rem;
 		--space-default: 2rem;
 		--space-lg: 2.5rem;
 		--space-xl: 3rem;
+		--border-radius: 1rem;
 	}
 
 	[data-theme="light"] {
@@ -51,7 +52,7 @@ const { title } = Astro.props;
 		--color-secondary: #dc2a4b;
 		--color-secondary-dark: #98334b;
 		--color-text-light: #fafafa;
-		--color-text-grey: #4c4c4e;
+		--color-text-grey: #888888;
 	}
 
 	* {
@@ -67,9 +68,21 @@ const { title } = Astro.props;
 		font-family: "Nunito", sans-serif;
 	}
 
+	ul {
+		margin:0;
+		padding:0;
+		list-style-type: none;
+	}
+
 	.container {
 		max-width:132rem;
 		margin: 0 auto;
 		padding: 0 var(--space-sm);
+	}
+
+	@mixin compontent-container {
+		padding:var(--space-default);
+		border-radius: var(--border-radius);
+		background-color: var(--color-bg-light);
 	}
 </style>

@@ -1,1 +1,97 @@
-SIDEBAR
+---
+import chevron from "../../images/svg/chevron.svg";
+import laliga from "../../images/la-liga.png";
+
+const leagues = ["La Liga", "Bundesliga", "La Liga", "European League", "Superliga Argentina", "Ukrainian League", "HET League", "Russian League", "Premier League", "Eredevise", "UEFA Champions", "Major League"];
+---
+
+<div class="sidebar">
+    <div class="sidebar__item">
+        <div class="sidebar__title">
+            <span>My Leagues</span>
+            <img src={chevron} alt="" />
+        </div>
+    
+        <div class="sidebar__options">
+            <ul>
+                {leagues.map((league) => (
+                    <li>
+                    <a href="#">
+                        <img src={laliga} alt="" />
+                        <span>{league}</span>
+                    </a>
+                </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+
+    <div class="sidebar__item">
+        <div class="sidebar__title">
+            <span>My Teams</span>
+            <img src={chevron} alt="" />
+        </div>
+    
+        <div class="sidebar__options">
+        </div>
+    </div>
+
+    <div class="sidebar__item">
+        <div class="sidebar__title">
+            <span>Countries</span>
+            <img src={chevron} alt="" />
+        </div>
+    
+        <div class="sidebar__options">
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    .sidebar {
+        flex: 0 0 18%;
+        padding: var(--space-default);
+        border-radius: var(--border-radius);
+        background-color: var(--color-bg-light);
+    }
+
+    .sidebar__item {
+        &:not(:last-child) {
+            margin-bottom: var(--space-default);
+        }
+    }
+
+    .sidebar__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--color-text-light);
+
+        img {
+            max-width: 20px;
+        }
+    }
+
+    .sidebar__options {
+        ul {
+            padding-top: var(--space-default);
+            padding-left: var(--space-xl);
+
+            li {
+                padding:var(--space-xs) 0;
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap:var(--space-xs);
+                    color: var(--color-text-grey);
+                    text-decoration: none;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+</style>
