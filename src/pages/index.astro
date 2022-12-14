@@ -1,23 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import AppLayout from '../layouts/AppLayout.astro';
-import Header from '../components/Header.astro';
-import Sidebar from '../components/app/Sidebar.astro';
-import Main from '../components/app/Main.astro';
-import Articles from '../components/app/Articles.astro';
+import Layout from "../layouts/Layout.astro";
+import AppLayout from "../layouts/AppLayout.astro";
+import Header from "../components/Header.astro";
+import SportsNav from "../components/SportsNav.astro";
+import Sidebar from "../components/app/Sidebar.astro";
+import Main from "../components/app/Main.astro";
+import Articles from "../components/app/Articles.astro";
+import League from "../components/events/League.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to LiveScores">
 	<main>
 		<Header />
+		<SportsNav />
+
 		<AppLayout>
-			<Sidebar/>
+			<League>
+				
+			</League>
+			<!-- <Sidebar/>
 			<Main />
-			<Articles />
+			<Articles /> -->
 		</AppLayout>
 	</main>
 </Layout>
 
-<style>
-	
+<style lang="scss">
+	main {
+		background-color: var(--color-bg);
+	}
+
+	.event {
+		display: flex;
+	}
 </style>

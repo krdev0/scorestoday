@@ -1,0 +1,67 @@
+---
+import football from "../images/sports/soccer.png";
+import basketball from "../images/sports/basketball.png";
+import tennis from "../images/sports/tennis.png";
+---
+
+<div class="sportsMenu">
+    <div class="wrap">
+        <div class="sportsMenu__item active">
+            <img src={football} alt="" />
+            <span>Football</span>
+        </div>
+        <div class="sportsMenu__item">
+            <img src={tennis} alt="" />
+            <span>Tennis</span>
+        </div>
+        <div class="sportsMenu__item">
+            <img src={basketball} alt="" />
+            <span>Basketball</span>
+        </div>
+        <div class="sportsMenu__item">
+            <img src={football} alt="" />
+            <span>Tennis</span>
+        </div>
+        <div class="sportsMenu__item">
+            <img src={football} alt="" />
+            <span>Cricket</span>
+        </div>
+    </div>
+</div>
+<style lang="scss">
+    .sportsMenu {
+        padding: var(--space-sm) 0 var(--space-sm) var(--space-sm);
+        .wrap {
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            overflow-y: scroll;
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: nowrap;
+        }
+
+        &__item {
+            flex:0 0 calc(40% - var(--space-default));
+            display: flex;
+            align-items: center;
+            padding: var(--space-default);
+            border-radius: 1.6rem;
+            gap: var(--space-default);
+            color: var(--color-text-light);
+            flex-direction: column;
+            background: #222232;
+            width: 10.5rem;
+            font-size: 1.8rem;
+
+            &.active {
+                background: linear-gradient(var(--gradient));
+            }
+
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+</style>

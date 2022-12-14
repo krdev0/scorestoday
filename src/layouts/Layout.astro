@@ -10,7 +10,7 @@ const { title } = Astro.props;
 <html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -47,13 +47,14 @@ const { title } = Astro.props;
 	}
 
 	[data-theme="dark"] {
-		--color-bg: #181518;
+		--color-bg: #181829;
 		--color-bg-light: #201d20;
 		--color-bg-lightgrey: #302e2f;
 		--color-secondary: #e92541;
 		--color-secondary-dark: #98334b;
 		--color-text-light: #fafafa;
 		--color-text-grey: #888888;
+		--gradient: 137.49deg, #F4A58A 0%, #ED6B4E 96.01%;
 	}
 
 	* {
@@ -76,7 +77,7 @@ const { title } = Astro.props;
 	}
 
 	.container {
-		max-width:132rem;
+		max-width:102.4rem;
 		margin: 0 auto;
 		padding: 0 var(--space-sm);
 	}
