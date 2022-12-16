@@ -1,0 +1,82 @@
+---
+import teamBarcelona from "../../images/teams/barcelona.png";
+import teamRealMadrid from "../../images/teams/realmadrid.png";
+---
+
+<div class="matchInfo">
+    <div class="result">
+        <div class="team">
+            <div class="logoWrap"><img src={teamBarcelona} alt="" /></div>
+            <div class="name">Barcelona</div>
+        </div>
+
+        <div class="score">
+            <div class="score__result">
+                <span>2</span>
+                <span>-</span>
+                <span>0</span>
+            </div>
+            <div class="score__time">90 min</div>
+        </div>
+
+        <div class="team">
+            <div class="logoWrap"><img src={teamRealMadrid} alt="" /></div>
+            <div class="name">Real Madrid</div>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    .matchInfo {
+
+        .result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:var(--space-xl);
+
+            .logoWrap {
+                width: 6rem;
+                height: 6rem;
+                background-color: var(--color-bg-els);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid var(--color-border);
+
+                img {
+                    max-width: 3.6rem;
+                    max-height: 3.6rem;
+                }
+            }
+
+            .score {
+                align-self: stretch;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                font-size: var(--font-score);
+                
+                &__result {
+                    flex:0 0 60%;
+                    display: flex;
+                    gap:var(--space-xs);
+                    align-items: center;
+                }
+
+                &__time {
+                    font-size: var(--font-sm);
+                }
+            }
+        }
+
+        .team {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+    }
+</style>

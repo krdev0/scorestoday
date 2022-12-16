@@ -1,0 +1,91 @@
+<div class="stats">
+    <div class="stats__controls">
+        <a href="#" class="active">Match Detail</a>
+        <a href="#" class="btn">Line Up</a>
+        <a href="#" class="btn">H2H</a>
+    </div>
+
+    <div class="stats__game">
+        <div class="stat">
+            <div>8</div>
+            <div>Shooting</div>
+            <div>2</div>
+        </div>
+        <div class="stat">
+            <div>22</div>
+            <div>Attacks</div>
+            <div>29</div>
+        </div>
+        <div class="stat">
+            <div>42%</div>
+            <div>Possession</div>
+            <div>58%</div>
+        </div>
+        <div class="stat">
+            <div>3</div>
+            <div>Cards</div>
+            <div>5</div>
+        </div>
+        <div class="stat">
+            <div>8</div>
+            <div>Corners</div>
+            <div>7</div>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    .stats {
+        
+        &__controls {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap:var(--space-xl);
+            margin: var(--space-default) 0;
+            a {
+                display: inline-flex;
+                text-decoration: none;
+                color:var(--color-white);
+                font-size: var(--font-sm);
+
+                &.active {
+                    background: linear-gradient(var(--gradient));
+                    padding:14px 20px;
+                    border-radius: 23px;
+                }
+            }
+        }
+
+        &__game {
+            display: flex;
+            flex-direction: column;
+
+            .stat {
+                display: flex;
+                justify-content: space-evenly;
+                padding:var(--space-xs);
+                color:#C4C4C4;
+                font-size: var(--font-lg);
+            }
+
+            .stat > div:first-child {
+                flex:0 0 18%;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .stat > div:nth-child(2) {
+                flex:1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .stat > div:last-child {
+                flex:0 0 18%;
+                display: flex;
+                justify-content: flex-start;
+            }
+        }
+    }
+</style>

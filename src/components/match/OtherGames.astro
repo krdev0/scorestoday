@@ -1,0 +1,27 @@
+<div class="other">
+    <div class="other__header">
+        <div class="title">Other Matches</div>
+        <div class="all">See all</div>
+    </div>
+    <slot/>
+</div>
+
+<style lang="scss">
+    .other {
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-default);
+
+            .title {
+                font-size: var(--font-lg);
+            }
+
+            .all {
+                font-size: var(--font-xs);
+                color:#C4C4C4;
+            }
+        }
+    }
+</style>

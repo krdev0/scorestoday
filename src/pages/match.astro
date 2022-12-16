@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AppLayout from "../layouts/AppLayout.astro";
+import Header from "../components/Header.astro";
+import MatchInfo from "../components/match/MatchInfo.astro";
+import MatchStats from "../components/match/MatchStats.astro";
+import EventsWrap from "../components/events/EventsWrap.astro";
+import Event from "../components/events/Event.astro";
+import OtherGames from "../components/match/OtherGames.astro";
+---
+
+<Layout title="Welcome to LiveScores">
+	<main>
+		<Header />
+
+		<AppLayout>
+            <MatchInfo/>
+
+            <MatchStats/>
+
+            <OtherGames>
+                <EventsWrap>
+                    <Event/>
+                    <Event/>
+                    <Event/>
+                    <Event/>
+                </EventsWrap>
+            </OtherGames>
+            
+		</AppLayout>
+	</main>
+</Layout>

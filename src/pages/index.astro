@@ -5,18 +5,30 @@ import Header from "../components/Header.astro";
 import SportsNav from "../components/SportsNav.astro";
 import League from "../components/events/League.astro";
 import Event from "../components/events/Event.astro";
+import EventsWrap from "../components/events/EventsWrap.astro";
 
 
-const eventsData = {
-    test1: {
-		league: {
-
-		},
-		matches: {
-
-		}
+const leagueData = {
+	spain: {
+		flag: '',
+		league: 'La Liga',
+		country: 'Spain'
 	},
-};
+	england: {
+		flag: '',
+		league: 'Premier League',
+		country: 'England'
+	}
+}
+
+const eventData = {
+	game1: {
+
+	},
+	game2: {
+
+	}
+}
 ---
 
 <Layout title="Welcome to LiveScores">
@@ -27,25 +39,18 @@ const eventsData = {
 		<AppLayout>
 
 			<League>
-				<div class="events">
+				<EventsWrap>
 					<Event/>
 					<Event/>
-				</div>
+					<Event/>
+				</EventsWrap>
 			</League>
 
 			<League>
-				<div class="events">
+				<EventsWrap>
 					<Event/>
 					<Event/>
-				</div>
-			</League>
-
-			
-			<League>
-				<div class="events">
-					<Event/>
-					<Event/>
-				</div>
+				</EventsWrap>
 			</League>
 			
 		</AppLayout>
@@ -55,11 +60,5 @@ const eventsData = {
 <style lang="scss">
 	main {
 		background-color: var(--color-bg);
-	}
-
-	.events {
-		display: flex;
-		flex-direction: column;
-		gap:var(--space-sm);
 	}
 </style>

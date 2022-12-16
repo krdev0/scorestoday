@@ -36,6 +36,7 @@ const { title } = Astro.props;
 		--space-default: 2rem;
 		--space-lg: 2.5rem;
 		--space-xl: 3rem;
+		
 		--border-radius: 1rem;
 		--border-radius-lg:1.6rem;
 
@@ -56,6 +57,8 @@ const { title } = Astro.props;
 
 	[data-theme="dark"] {
 		--color-bg: #181829;
+		--color-bg-els: #222232;
+		--color-border: #2B2B3D;
 		--color-bg-light: #201d20;
 		--color-bg-lightgrey: #302e2f;
 		--color-secondary: #e92541;
@@ -78,6 +81,11 @@ const { title } = Astro.props;
 		font-size: var(--font-default);
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: var(--font-weight-default);
+		color:var(--color-text-white);
+	}
+
+	main {
+		background-color: var(--color-bg);
 	}
 
 	ul {
@@ -89,7 +97,7 @@ const { title } = Astro.props;
 	.container {
 		max-width:102.4rem;
 		margin: 0 auto;
-		padding: 0 var(--space-sm);
+		padding: 0 var(--space-xl);
 	}
 
 	@mixin compontent-container {
