@@ -1,0 +1,96 @@
+---
+import teamBarcelona from "../../images/teams/barcelona.png";
+import teamRealMadrid from "../../images/teams/realmadrid.png";
+---
+<div class="eventMatch">
+    <div class="logos">
+        <div class="logoWrap"><img src={teamBarcelona} alt=""></div>
+        <div class="logoWrap"><img src={teamRealMadrid} alt=""></div>
+    </div>
+    <div class="result">
+        <div class="team1">
+            <span>Barcelona</span>
+            <span>2</span>
+        </div>
+        <div class="sep">
+            <span>vs</span>
+            <span>-</span>
+        </div>
+        <div class="team2">
+            <span>Real Madrid</span>
+            <span>0</span>
+        </div>
+    </div>
+    <div class="status">
+        HT
+    </div>
+</div>
+
+<style lang="scss">
+    .eventMatch {
+        height: 6.8rem;
+        display: flex;
+        align-items: center;
+        background-color: #2B2B3D;
+        border-radius: var(--border-radius-lg);
+
+        .logos {
+            flex:0 0 18%;
+            display: flex;
+            align-items: center;
+
+            .logoWrap {
+                width: 3.9rem;
+                height: 3.9rem;
+                border-radius: 50%;
+                background-color: #222232;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border:3px solid #2B2B3D;
+
+                img {
+                max-width: 2.1rem;
+                max-height: 2.1rem;
+                }
+
+                &:first-of-type {
+                    position: relative;
+                    right: -7px;
+                    z-index: 2;
+                }
+
+                &:last-of-type {
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .result {
+            display: flex;
+            justify-content: center;
+            flex:1;
+            gap:var(--space-default);
+
+            .team1, .sep, .team2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color:#fff;
+            }
+        }
+
+        .status {
+            flex:0 0 12%;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            background-color: #222232;
+            border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+            color:white;
+        }
+    }
+</style>

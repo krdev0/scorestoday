@@ -1,0 +1,51 @@
+---
+import flagSpain from "../../images/flags/spain.png";
+import arrowRight from "../../images/svg/arrow-right.svg";
+---
+
+<div class="eventHeader">
+    <div class="flag">
+        <img src={flagSpain} alt="" />
+    </div>
+    <div class="event">
+        <span>La Liga</span>
+        <span>Spain</span>
+    </div>
+    <div class="more"><img src={arrowRight} alt="" /></div>
+</div>
+
+<style lang="scss">
+    .eventHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .event {
+            margin-left: var(--space-xs);
+            display: flex;
+            flex-direction: column;
+
+            span:first-child {
+                font-weight: bold;
+                color: white;
+                margin-bottom:.4rem;
+            }
+
+            span:nth-child(2) {
+                color: #aaa;
+                font-size: 1.2rem;
+            }
+        }
+
+        .flag {
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        .more {
+            margin-left: auto;
+        }
+    }
+</style>
