@@ -7,26 +7,43 @@ import MatchStats from "../components/match/MatchStats.astro";
 import EventsWrap from "../components/events/EventsWrap.astro";
 import Event from "../components/events/Event.astro";
 import OtherGames from "../components/match/OtherGames.astro";
+import Sidebar from "../components/app/Sidebar.astro";
+import Articles from "../components/app/Articles.astro";
+import MatchWrap from "../components/match/MatchWrap.astro";
+import SportsNav from "../components/SportsNav.astro";
+import Article from "../components/app/Article.astro";
 ---
 
 <Layout title="Welcome to LiveScores">
-	<main>
-		<Header />
+    <main>
+        <Header />
+        <SportsNav/>
 
-		<AppLayout>
-            <MatchInfo/>
+        <AppLayout>
+            <Sidebar />
 
-            <MatchStats/>
+            <MatchWrap>
+                <MatchInfo />
 
-            <OtherGames>
-                <EventsWrap>
-                    <Event/>
-                    <Event/>
-                    <Event/>
-                    <Event/>
-                </EventsWrap>
-            </OtherGames>
-            
-		</AppLayout>
-	</main>
+                <MatchStats />
+
+                <OtherGames>
+                    <EventsWrap>
+                        <Event />
+                        <Event />
+                        <Event />
+                        <Event />
+                    </EventsWrap>
+                </OtherGames>
+            </MatchWrap>
+
+            <Articles>
+				<Article/>
+				<Article/>
+				<Article/>
+				<Article/>
+				<Article/>
+			</Articles>
+        </AppLayout>
+    </main>
 </Layout>

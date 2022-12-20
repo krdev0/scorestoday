@@ -1,5 +1,9 @@
 <div class="articles">
-    These are articles
+    <span class="articles__title">Latest Articles</span>
+
+    <div class="articles__wrap">
+        <slot/>
+    </div>
 </div>
 
 <style lang="scss">
@@ -13,6 +17,13 @@
 		    border-radius: var(--border-radius);
 		    background-color: var(--color-bg-els);
             flex:0 0 25%;
+        }
+
+        &__wrap {
+            margin-top: var(--space-default);
+            display: flex;
+            flex-direction: column;
+            gap:var(--space-default);
         }
     }
 </style>

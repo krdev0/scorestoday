@@ -1,0 +1,42 @@
+---
+import carlo from '../../images/carlo-06.jpg';
+---
+
+<div class="article">
+    <div class="article__img">
+        <img src={carlo} alt="">
+    </div>
+    <div class="article__main">
+        <div class="title">Pauolo Ancelotti in the running for coach...</div>
+        <div class="date">20 DEC 2022 15:39</div>
+    </div>
+</div>
+
+<style lang="scss">
+    .article {
+        display: flex;
+        align-items: center;
+        gap:var(--space-sm);
+
+        &__img {
+            flex:1;
+            img {
+                width: 6.6rem;
+                height: 6.6rem;
+                border-radius: var(--border-radius);
+            }
+        }
+
+        &__main {
+            .title {
+                font-size:var(--font-sm);
+                margin-bottom: var(--space-xs);
+            }
+
+            .date {
+                font-size: var(--font-xs);
+                color:var(--color-text-grey);
+            }
+        }
+    }
+</style>
