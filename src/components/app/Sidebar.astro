@@ -1,8 +1,21 @@
 ---
 import chevron from "../../images/svg/chevron.svg";
-import laliga from "../../images/la-liga.png";
+import laliga from "../../images/leagues/la-liga.png";
 
-const leagues = ["La Liga", "Bundesliga", "La Liga", "European League", "Superliga Argentina", "Ukrainian League", "HET League", "Russian League", "Premier League", "Eredevise", "UEFA Champions", "Major League"];
+const leagues = [
+    "La Liga",
+    "Bundesliga",
+    "La Liga",
+    "European League",
+    "Superliga Argentina",
+    "Ukrainian League",
+    "HET League",
+    "Russian League",
+    "Premier League",
+    "Eredevise",
+    "UEFA Champions",
+    "Major League",
+];
 ---
 
 <div class="sidebar">
@@ -11,17 +24,19 @@ const leagues = ["La Liga", "Bundesliga", "La Liga", "European League", "Superli
             <span>My Leagues</span>
             <img src={chevron} alt="" />
         </div>
-    
+
         <div class="sidebar__options">
             <ul>
-                {leagues.map((league) => (
-                    <li>
-                    <a href="#">
-                        <img src={laliga} alt="" />
-                        <span>{league}</span>
-                    </a>
-                </li>
-                ))}
+                {
+                    leagues.map((league) => (
+                        <li>
+                            <a href="#">
+                                <img src={laliga} alt="" />
+                                <span>{league}</span>
+                            </a>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     </div>
@@ -31,9 +46,8 @@ const leagues = ["La Liga", "Bundesliga", "La Liga", "European League", "Superli
             <span>My Teams</span>
             <img src={chevron} alt="" />
         </div>
-    
-        <div class="sidebar__options">
-        </div>
+
+        <div class="sidebar__options"></div>
     </div>
 
     <div class="sidebar__item">
@@ -41,18 +55,23 @@ const leagues = ["La Liga", "Bundesliga", "La Liga", "European League", "Superli
             <span>Countries</span>
             <img src={chevron} alt="" />
         </div>
-    
-        <div class="sidebar__options">
-        </div>
+
+        <div class="sidebar__options"></div>
     </div>
 </div>
 
 <style lang="scss">
+    @import "../../styles/mixins.scss";
     .sidebar {
-        flex: 0 0 18%;
-        padding: var(--space-default);
-        border-radius: var(--border-radius);
-        background-color: var(--color-bg-light);
+        display: none;
+
+        @include for-tablet-landscape-up {
+            display: block;
+            flex: 0 0 20%;
+            padding: var(--space-default);
+            border-radius: var(--border-radius);
+            background-color: var(--color-bg-els);
+        }
     }
 
     .sidebar__item {
@@ -65,7 +84,7 @@ const leagues = ["La Liga", "Bundesliga", "La Liga", "European League", "Superli
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: var(--color-text-light);
+        color: var(--color-white);
 
         img {
             max-width: 20px;
@@ -78,12 +97,12 @@ const leagues = ["La Liga", "Bundesliga", "La Liga", "European League", "Superli
             padding-left: var(--space-xl);
 
             li {
-                padding:var(--space-xs) 0;
+                padding: var(--space-xs) 0;
                 a {
                     display: flex;
                     align-items: center;
-                    gap:var(--space-xs);
-                    color: var(--color-text-grey);
+                    gap: var(--space-xs);
+                    color: var(--color-white);
                     text-decoration: none;
 
                     img {

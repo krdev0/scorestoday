@@ -6,6 +6,9 @@ import SportsNav from "../components/SportsNav.astro";
 import League from "../components/events/League.astro";
 import Event from "../components/events/Event.astro";
 import EventsWrap from "../components/events/EventsWrap.astro";
+import Sidebar from "../components/app/Sidebar.astro";
+import Articles from "../components/app/Articles.astro";
+import Leagues from "../components/events/Leagues.astro";
 
 
 const leagueData = {
@@ -37,22 +40,26 @@ const eventData = {
 		<SportsNav />
 
 		<AppLayout>
+			<Sidebar/>
 
-			<League>
-				<EventsWrap>
-					<Event/>
-					<Event/>
-					<Event/>
-				</EventsWrap>
-			</League>
-
-			<League>
-				<EventsWrap>
-					<Event/>
-					<Event/>
-				</EventsWrap>
-			</League>
+			<Leagues>
+				<League>
+					<EventsWrap>
+						<Event/>
+						<Event/>
+						<Event/>
+					</EventsWrap>
+				</League>
+	
+				<League>
+					<EventsWrap>
+						<Event/>
+						<Event/>
+					</EventsWrap>
+				</League>
+			</Leagues>
 			
+			<Articles/>
 		</AppLayout>
 	</main>
 </Layout>

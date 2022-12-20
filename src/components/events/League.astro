@@ -24,6 +24,10 @@ const { leagueData } = Astro.props;
         flex-direction: column;
         gap: var(--space-sm);
 
+        &:not(:last-child) {
+            margin-bottom: var(--space-lg);
+        }
+
         .eventHeader {
             display: flex;
             flex-direction: row;

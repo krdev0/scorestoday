@@ -29,8 +29,16 @@ import tennis from "../images/sports/tennis.png";
     </div>
 </div>
 <style lang="scss">
+    @import "../styles/mixins.scss";
+
     .sportsMenu {
         padding: var(--space-sm) 0 var(--space-sm) var(--space-sm);
+
+        @include for-tablet-landscape-up {
+            max-width: var(--container);
+            margin:0 auto;
+            padding:0 var(--space-xl);
+        }
         .wrap {
             &::-webkit-scrollbar {
                 display: none;
@@ -54,6 +62,10 @@ import tennis from "../images/sports/tennis.png";
             width: 10.5rem;
             font-size: 1.8rem;
 
+            @include for-tablet-landscape-up {
+            flex:1;
+            }
+
             &.active {
                 background: linear-gradient(var(--gradient));
             }
@@ -63,5 +75,6 @@ import tennis from "../images/sports/tennis.png";
                 height: 4rem;
             }
         }
+
     }
 </style>

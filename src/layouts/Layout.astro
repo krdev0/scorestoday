@@ -10,13 +10,16 @@ const { title } = Astro.props;
 <html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+			rel="stylesheet"
+		/>
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -36,9 +39,9 @@ const { title } = Astro.props;
 		--space-default: 2rem;
 		--space-lg: 2.5rem;
 		--space-xl: 3rem;
-		
+
 		--border-radius: 1rem;
-		--border-radius-lg:1.6rem;
+		--border-radius-lg: 1.6rem;
 
 		--font-xs: 1.2rem;
 		--font-sm: 1.4rem;
@@ -47,8 +50,10 @@ const { title } = Astro.props;
 		--font-title: 3.6rem;
 		--font-score: 4rem;
 
-		--font-weight-400:400;
-		--font-weight-default:600;
+		--font-weight-400: 400;
+		--font-weight-default: 600;
+
+		--container: 102.4rem;
 	}
 
 	[data-theme="light"] {
@@ -58,15 +63,15 @@ const { title } = Astro.props;
 	[data-theme="dark"] {
 		--color-bg: #181829;
 		--color-bg-els: #222232;
-		--color-border: #2B2B3D;
+		--color-border: #2b2b3d;
 		--color-bg-light: #201d20;
 		--color-bg-lightgrey: #302e2f;
 		--color-secondary: #e92541;
 		--color-secondary-dark: #98334b;
-		--color-text-white:#ffffff;
+		--color-text-white: #ffffff;
 		--color-text-light: #fafafa;
 		--color-text-grey: #888888;
-		--gradient: 137.49deg, #F4A58A 0%, #ED6B4E 96.01%;
+		--gradient: 137.49deg, #f4a58a 0%, #ed6b4e 96.01%;
 	}
 
 	* {
@@ -81,7 +86,7 @@ const { title } = Astro.props;
 		font-size: var(--font-default);
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: var(--font-weight-default);
-		color:var(--color-text-white);
+		color: var(--color-text-white);
 	}
 
 	main {
@@ -89,19 +94,19 @@ const { title } = Astro.props;
 	}
 
 	ul {
-		margin:0;
-		padding:0;
+		margin: 0;
+		padding: 0;
 		list-style-type: none;
 	}
 
 	.container {
-		max-width:102.4rem;
+		max-width: var(--container);
 		margin: 0 auto;
 		padding: 0 var(--space-xl);
 	}
 
 	@mixin compontent-container {
-		padding:var(--space-default);
+		padding: var(--space-default);
 		border-radius: var(--border-radius);
 		background-color: var(--color-bg-light);
 	}
