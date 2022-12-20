@@ -19,44 +19,46 @@ const leagues = [
 ---
 
 <div class="sidebar">
-    <div class="sidebar__item">
-        <div class="sidebar__title">
-            <span>My Leagues</span>
-            <img src={chevron} alt="" />
+    <div class="sidebar__wrap">
+        <div class="sidebar__item">
+            <div class="sidebar__title">
+                <span>My Leagues</span>
+                <img src={chevron} alt="" />
+            </div>
+    
+            <div class="sidebar__options">
+                <ul>
+                    {
+                        leagues.map((league) => (
+                            <li>
+                                <a href="#">
+                                    <img src={laliga} alt="" />
+                                    <span>{league}</span>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
-
-        <div class="sidebar__options">
-            <ul>
-                {
-                    leagues.map((league) => (
-                        <li>
-                            <a href="#">
-                                <img src={laliga} alt="" />
-                                <span>{league}</span>
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
+    
+        <div class="sidebar__item">
+            <div class="sidebar__title">
+                <span>My Teams</span>
+                <img src={chevron} alt="" />
+            </div>
+    
+            <div class="sidebar__options"></div>
         </div>
-    </div>
-
-    <div class="sidebar__item">
-        <div class="sidebar__title">
-            <span>My Teams</span>
-            <img src={chevron} alt="" />
+    
+        <div class="sidebar__item">
+            <div class="sidebar__title">
+                <span>Countries</span>
+                <img src={chevron} alt="" />
+            </div>
+    
+            <div class="sidebar__options"></div>
         </div>
-
-        <div class="sidebar__options"></div>
-    </div>
-
-    <div class="sidebar__item">
-        <div class="sidebar__title">
-            <span>Countries</span>
-            <img src={chevron} alt="" />
-        </div>
-
-        <div class="sidebar__options"></div>
     </div>
 </div>
 
@@ -68,10 +70,13 @@ const leagues = [
         @include for-tablet-landscape-up {
             display: block;
             flex: 0 0 20%;
-            padding: var(--space-default);
+        }
+    }
+
+    .sidebar__wrap {
+        padding: var(--space-default);
             border-radius: var(--border-radius);
             background-color: var(--color-bg-els);
-        }
     }
 
     .sidebar__item {
