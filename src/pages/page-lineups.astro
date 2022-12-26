@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AppLayout from "../layouts/AppLayout.astro";
+import Header from "../components/Header.astro";
+import MatchInfo from "../components/match/MatchInfo.astro";
+import MatchStats from "../components/match/MatchStats.astro";
+import EventsWrap from "../components/events/EventsWrap.astro";
+import Event from "../components/events/Event.astro";
+import OtherGames from "../components/match/OtherGames.astro";
+import Sidebar from "../components/app/Sidebar.astro";
+import Articles from "../components/app/Articles.astro";
+import MatchWrap from "../components/match/MatchWrap.astro";
+import SportsNav from "../components/SportsNav.astro";
+import Article from "../components/app/Article.astro";
+import Lineups from "../components/match/Lineups.astro";
+---
+
+<Layout title="Welcome to LiveScores">
+    <main>
+        <Header />
+        
+        <div class="container">
+            <div class="league">
+                <span>⇽</span> UEFA Champions League 
+            </div>
+        </div>
+
+        <AppLayout>
+            <Sidebar />
+
+            <MatchWrap>
+                <MatchInfo />
+
+                <div class="stats__controls">
+                    <a href="#" class="btn">Match Detail</a>
+                    <a href="#" class="active">Line Up</a>
+                    <a href="#" class="btn">H2H</a>
+                </div>
+
+                <Lineups />
+
+            </MatchWrap>
+
+            <Articles>
+				<Article/>
+				<Article/>
+				<Article/>
+				<Article/>
+				<Article/>
+			</Articles>
+        </AppLayout>
+    </main>
+</Layout>
+
+<style lang="scss">
+    .stats {
+        &__controls {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap:var(--space-xl);
+            margin: var(--space-default) 0;
+            a {
+                display: inline-flex;
+                text-decoration: none;
+                color:var(--color-white);
+                font-size: var(--font-sm);
+
+                &.active {
+                    background: linear-gradient(var(--gradient));
+                    padding:14px 20px;
+                    border-radius: 23px;
+                }
+            }
+        }
+    }
+</style>
