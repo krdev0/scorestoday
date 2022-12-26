@@ -1,9 +1,11 @@
+---
+import MatchControls from "./MatchControls.astro";
+
+---
+
 <div class="stats">
-    <div class="stats__controls">
-        <a href="#" class="active">Match Detail</a>
-        <a href="#" class="btn">Line Up</a>
-        <a href="#" class="btn">H2H</a>
-    </div>
+
+    <MatchControls/>
 
     <div class="stats__game">
         <div class="stat">
@@ -36,26 +38,6 @@
 
 <style lang="scss">
     .stats {
-        
-        &__controls {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap:var(--space-xl);
-            margin: var(--space-default) 0;
-            a {
-                display: inline-flex;
-                text-decoration: none;
-                color:var(--color-white);
-                font-size: var(--font-sm);
-
-                &.active {
-                    background: linear-gradient(var(--gradient));
-                    padding:14px 20px;
-                    border-radius: 23px;
-                }
-            }
-        }
 
         &__game {
             display: flex;

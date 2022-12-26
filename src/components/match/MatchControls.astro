@@ -1,0 +1,27 @@
+<div class="controls">
+    <a href="/match" class="active">Match Detail</a>
+    <a href="/page-lineups" class="btn">Line Up</a>
+    <a href="#" class="btn">H2H</a>
+</div>
+
+<style lang="scss">
+    .controls {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap:var(--space-xl);
+            margin: var(--space-default) 0;
+            a {
+                display: inline-flex;
+                text-decoration: none;
+                color:var(--color-white);
+                font-size: var(--font-sm);
+
+                &.active {
+                    background: linear-gradient(var(--gradient));
+                    padding:14px 20px;
+                    border-radius: 23px;
+                }
+            }
+        }
+</style>
