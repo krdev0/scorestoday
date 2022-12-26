@@ -31,7 +31,6 @@
                     </div>
                 </div>
                 <div class="mid">
-
                     <div class="playerOnfield">
                         <div class="num">3</div>
                         <div class="name">Tierney</div>
@@ -51,10 +50,8 @@
                         <div class="num">2</div>
                         <div class="name">Bellerin</div>
                     </div>
-
                 </div>
                 <div class="atk">
-
                     <div class="playerOnfield">
                         <div class="num">16</div>
                         <div class="name">Holding</div>
@@ -64,13 +61,10 @@
                         <div class="num">2</div>
                         <div class="name">Bellerin</div>
                     </div>
-
                 </div>
             </div>
             <div class="awayTeam">
-            
                 <div class="atk">
-
                     <div class="playerOnfield">
                         <div class="num">16</div>
                         <div class="name">Holding</div>
@@ -80,11 +74,9 @@
                         <div class="num">2</div>
                         <div class="name">Bellerin</div>
                     </div>
-
                 </div>
-                
-                <div class="mid">
 
+                <div class="mid">
                     <div class="playerOnfield">
                         <div class="num">3</div>
                         <div class="name">Tierney</div>
@@ -104,7 +96,6 @@
                         <div class="num">2</div>
                         <div class="name">Bellerin</div>
                     </div>
-
                 </div>
 
                 <div class="def">
@@ -138,11 +129,18 @@
             </div>
 
             <div class="fieldElements">
-                <div class="corners">
-                    <div class="topLeft"></div>
-                    <div class="topRight"></div>
-                    <div class="bottomLeft"></div>
-                    <div class="bottomRight"></div>
+                <div class="corner topLeft"></div>
+                <div class="corner topRight"></div>
+                <div class="corner bottomLeft"></div>
+                <div class="corner bottomRight"></div>
+                <div class="fieldCenter"></div>
+                <div class="fieldCenterDot"></div>
+                <div class="fieldCenterCircle"></div>
+                <div class="topGoalBox">
+                    <div class="inner"></div>
+                </div>
+                <div class="bottomGoalBox">
+                    <div class="inner"></div>
                 </div>
             </div>
         </div>
@@ -150,21 +148,28 @@
     </div>
 </div>
 
-<style lang="scss"> 
+<style lang="scss">
     .fieldWrap {
-        padding:20px 0;
+        padding: 20px 0;
         // margin-left: -30px;
         // margin-right: -30px;
     }
 
     .field {
-        background: repeating-linear-gradient(180deg,#6FCF97,#6FCF97 10%,#4FB58E 0,#4FB58E 20%);
+        background: repeating-linear-gradient(
+            180deg,
+            #6fcf97,
+            #6fcf97 10%,
+            #4fb58e 0,
+            #4fb58e 20%
+        );
         border-radius: 5px;
 
-        padding:0 15px;
+        padding: 0 15px;
 
-        &__home, &__away {
-            padding:10px 0;
+        &__home,
+        &__away {
+            padding: 10px 0;
         }
 
         &__layout {
@@ -173,7 +178,8 @@
             height: 600px;
             border: 2px solid var(--color-text-white);
 
-            .homeTeam, .awayTeam {
+            .homeTeam,
+            .awayTeam {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -181,63 +187,144 @@
                 padding: 0.5rem;
                 height: 50%;
             }
-            
-            .gk,.def,.mid,.atk {
+
+            .gk,
+            .def,
+            .mid,
+            .atk {
                 display: flex;
                 align-items: flex-start;
             }
-
 
             .gk {
             }
         }
 
-        .fieldElements  {
-            height: 100%;
-            overflow: hidden;
-            position: relative;
+        .fieldElements {
             width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
 
-            .corners {
-                border: 2px solid #96a772;
+            .corner {
+                border: 2px solid var(--color-text-white);
                 border-radius: 9999px;
                 height: 2.5rem;
                 position: absolute;
                 width: 2.5rem;
 
-                .topLeft {
-                    top:-20px;
-                    left:-20px;
+                &.topLeft {
+                    top: -1.2rem;
+                    left: -1.2rem;
+                }
+
+                &.topRight {
+                    top:-1.2rem;
+                    right:-1.2rem;
+                }
+
+                &.bottomLeft {
+                    bottom:-1.2rem;
+                    left:-1.2rem;
+                }
+
+                &.bottomRight {
+                    bottom:-1.2rem;
+                    right:-1.2rem;
+                }
+            }
+
+            .fieldCenter {
+                border: 1px solid var(--color-text-white);
+                position: absolute;
+                top: calc(50% - 2px);
+                width: 100%;
+            }
+
+            .fieldCenterDot {
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: var(--color-text-white);
+                left: calc(50% - 3px);
+                top: calc(50% - 4px);
+            }
+
+            .fieldCenterCircle {
+                position: absolute;
+                border-radius: 50%;
+                height: 76px;
+                border: 2px solid var(--color-text-white);
+                left: calc(50% - 38px);
+                top: calc(50% - 38px);
+                width: 76px;
+            }
+
+            .topGoalBox {
+                position: absolute;
+                width: 50%;
+                left: 25%;
+                border: 2px solid var(--color-text-white);
+                height: 10%;
+                top:-2px;
+
+                .inner  {
+                    position: absolute;
+                    width: 50%;
+                    left: 25%;
+                    border: 2px solid var(--color-text-white);
+                    height: 2.5rem;
+                    top:-2px;
+                }
+            }
+
+            .bottomGoalBox {
+                position: absolute;
+                width: 50%;
+                left: 25%;
+                border: 2px solid var(--color-text-white);
+                height: 10%;
+                bottom:-2px;
+
+                .inner {
+                    position: absolute;
+                    width: 50%;
+                    left: 25%;
+                    border: 2px solid var(--color-text-white);
+                    height: 2.5rem;
+                    bottom:-2px;
                 }
             }
         }
 
-
         .playerOnfield {
-            flex:1 1;
+            flex: 1 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap:10px;
-
+            gap: 4px;
+            z-index: 10;
 
             .num {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding:6px;
+                padding: 6px;
                 font-size: 1.2rem;
                 width: 2.4rem;
                 height: 2.4rem;
                 border-radius: 50%;
-                background: #36B585;
+                background: #36b585;
                 border: 1px solid rgba(255, 255, 255, 0.2);
             }
 
             .name {
                 font-size: 1.2rem;
-                background: #558F78;
+                background: #558f78;
                 border-radius: 5px;
                 padding: 1px 5px;
             }
